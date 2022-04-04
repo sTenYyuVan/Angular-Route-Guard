@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="img">
+    <img src="https://avatars.githubusercontent.com/u/53110175?v=4" />
+  </div>
+  <div class="infos" [hidden]="edited">
+    <div class="name">
+      <h2>{{ profile.name }}</h2>
+      <h4>{{ profile.username }}</h4>
+    </div>
+    <p class="text">
+      {{ profile.description }}
+    </p>
+    <ul class="stats">
+      <li>
+        <h3>46</h3>
+        <h4>Followers</h4>
+      </li>
+      <li>
+        <h3>13</h3>
+        <h4>Projects</h4>
+      </li>
+      <li>
+        <h3>68</h3>
+        <h4>Following</h4>
+      </li>
+    </ul>
+    <div class="links">
+      <button class="follow" (click)="edited = true">Edit profile</button>&nbsp;
+      <button class="view" (click)="logOutUser()">Logout</button>
+    </div>
+  </div>
+
+  <div class="infos" [hidden]="!edited">
+    <form #editProfile="ngForm" (ngSubmit)="onSubmit()">
+      <div class="name">
+        <h2>
+          <input
+            type="text"
+            value="{{ profile.name }}"
+            id="name"
+            name="name"
+            [(ngModel)]="profile.name"
+            required
+          />
+        </h2>
+      </div>
+      <div class="name">
+        <h2>
+          <input
+            value="{{ profile.username }}"
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="profile.username"
+            required
+          />
+        </h2>
+      </div>
+      <textarea
+        value="{{ profile.description }}"
+        name="description"
+        id="description"
+        [(ngModel)]="profile.description"
+        class="text"
+      >
+      </textarea>
+      <ul class="stats">
+        <li>
+          <h3>46</h3>
+          <h4>Followers</h4>
+        </li>
+        <li>
+          <h3>13</h3>
+          <h4>Projects</h4>
+        </li>
+        <li>
+          <h3>68</h3>
+          <h4>Following</h4>
+        </li>
+      </ul>
+
+      <div class="links">
+        <button (click)="edited = false" class="follow">Save</button>&nbsp;
+      </div>
+    </form>
+  </div>
+</div>
