@@ -10,7 +10,7 @@ import { Profile } from 'src/profile.model';
 export class ProfileComponent implements OnInit {
   constructor(private router: Router) { }
 
-  profile = new Profile('ARUN BALAJI R', '@arunadhigaaram', "Sample angular application for simulation of preventing unauthorized user in particular page by utilizing angular guards.")
+  profile = new Profile('YUVAN STENY A', '@admin', "Sample angular application for simulation of preventing unauthorized user in particular page by utilizing angular guards.")
   edited = false;
 
   logOutUser() {

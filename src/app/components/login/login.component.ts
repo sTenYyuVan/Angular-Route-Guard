@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    if (this.userAdmin.userName == 'administrator' && this.userAdmin.userPass == 'arunbalaji') {
+    if (this.userAdmin.userName == '@yuvanadmin' && this.userAdmin.userPass == 'Yuvansteny') {
       sessionStorage.setItem('loginId',this.userAdmin.userName);
       this.router.navigateByUrl('profile');
     } else {
